@@ -1,5 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const CardContainer = styled.div`
     display: flex;
@@ -11,17 +15,42 @@ const CardContainer = styled.div`
 
 const CardWrapper = styled.div`
     padding: 15px;
-    width: 300px;
+    width: 350px;
     height: 500px;
     border: 1px solid #e5e5e5;
     border-radius: 15px;
-    box-shadow: 20px 20px 20px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 30px 30px 30px 0 rgba(0, 0, 0, 0.3);
 `;
 
 const Main = () => {
     return (
         <CardContainer>
-            <CardWrapper>카드</CardWrapper>
+            <Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                centeredSlides={true}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination]}
+                className="mySwiper"
+            >
+                <SwiperSlide>
+                    <CardWrapper>카드내용물 채워넣기</CardWrapper>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <CardWrapper>카드내용물 채워넣기</CardWrapper>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <CardWrapper>카드내용물 채워넣기</CardWrapper>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <CardWrapper>카드내용물 채워넣기</CardWrapper>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <CardWrapper>카드내용물 채워넣기</CardWrapper>
+                </SwiperSlide>
+            </Swiper>
         </CardContainer>
     );
 };

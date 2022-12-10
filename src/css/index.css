@@ -1,1 +1,6 @@
 @import url('./reset.css');
+@import url('./swiper.css');
+
+body {
+    min-width: 1260px;
+}
